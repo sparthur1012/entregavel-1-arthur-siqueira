@@ -21,7 +21,7 @@ O programa um programa para analise da viabilidade de bateria de um robô de aco
 ## TO-DO ✅
 
 - [x] Estruturar o programa.
-- [ ] Criar a classe Robo.
-- [ ] Criar funções específicas.
-- [ ] Criar função principal.
-- [ ] Testar funcionamento do programa. 
+- [x] Criar a classe Robo.
+- [x] Criar funções específicas.
+- [x] Criar função principal.
+- [x] Testar funcionamento do programa.
