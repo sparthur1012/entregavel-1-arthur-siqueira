@@ -5,14 +5,14 @@ import sys
 ## definindo Robo, suas caracteristicas e da sua missao
 class Robo:
     ### definindo caracteristicas do Robo
-    def __init__(self, bateria, tempo, consumo_p_min):
+    def __init__(self, bateria, tempo, consumo):
         self.bateria = bateria # porcentagem de energia da bateria (0 a 100)
         self.tempo = tempo # em minutos
-        self.consumo_p_min = consumo_p_min # em porcentagem por minuto
+        self.consumo = consumo # em porcentagem por minuto
        
     ### definindo metodos para calcular energia necessaria e restante
     def energia_necessaria(self):
-        return self.tempo * self.consumo_p_min
+        return self.tempo * self.consumo
 
     def energia_restante(self):
         return self.bateria - self.energia_necessaria()
@@ -26,18 +26,18 @@ def buscar_informacoes():
     try:
         bateria = float(input("Digite a porcentagem da bateria do robô (0 a 100): "))
         tempo = float(input("Digite o tempo da missão em minutos: "))
-        consumo_p_min = float(input("Digite o consumo de energia em porcentagem por minuto: "))
+        consumo = float(input("Digite o consumo de energia em porcentagem por minuto: "))
 
         ## validando os valores de entrada
         if bateria < 0 or bateria > 100:
             raise ValueError("Valor invalido (bateria)")
         if tempo <= 0:
             raise ValueError("Valor invalido (tempo)")
-        if consumo_p_min <= 0:
+        if consumo <= 0:
             raise ValueError("Valor invalido (consumo por minuto)")
 
         ## retornando objeto Robo com os valores informados
-        return Robo(bateria, tempo, consumo_p_min)
+        return Robo(bateria, tempo, consumo)
 
     ### tratando excecoes de entrada
     except ValueError as e:
