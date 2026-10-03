@@ -27,7 +27,8 @@ def buscar_informacoes():
         bateria = float(input("Digite a porcentagem da bateria do robô (0 a 100): "))
         tempo = float(input("Digite o tempo da missão em minutos: "))
         consumo_p_min = float(input("Digite o consumo de energia em porcentagem por minuto: "))
-        
+
+        ## validando os valores de entrada
         if bateria < 0 or bateria > 100:
             raise ValueError("Valor invalido (bateria)")
         if tempo <= 0:
@@ -35,14 +36,19 @@ def buscar_informacoes():
         if consumo_p_min <= 0:
             raise ValueError("Valor invalido (consumo por minuto)")
 
+        ## retornando objeto Robo com os valores informados
         return Robo(bateria, tempo, consumo_p_min)
-    
+
+    ### tratando excecoes de entrada
     except ValueError as e:
         print(f"Erro: {e}")
         sys.exit(1)
 
+## definindo função para entregar informacoes do Robo
 def entregar_informacoes(meuRobo):
+    ### calculando energia restante e verificando viabilidade da missao
     restante = meuRobo.energia_restante()
+    ### entregando informacoes do Robo
     if meuRobo.missao_viavel():
         print(f"Missão viável.")
         print(f" Bateria restante: {restante:.2f}%")
@@ -53,10 +59,12 @@ def entregar_informacoes(meuRobo):
         print(f" Consumo total: {meuRobo.energia_necessaria():.2f}%.")
         print(f" Faltam {faltam:.2f} pontos percentuais.")
 
+## definindo função main para executar o programa
 def main():
     meuRobo = buscar_informacoes()
     entregar_informacoes(meuRobo)
 
 
+## executando o programa
 if __name__ == "__main__":
     main()
