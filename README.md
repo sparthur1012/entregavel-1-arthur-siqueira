@@ -8,20 +8,26 @@ O programa um programa para analise da viabilidade de bateria de um robô de aco
 
 ## ESTRUTURA DO CÓDIGO 🧬
 
-- Robo é uma classe com:
-	- Energia: inteiro (varia entre 0-100).
-	- Tempo de missão: inteiro (verificar se existem bibliotecas para tempo).
-	- Consumo por minuto: float.
-- CheckBat é uma função que verificar se o valor de bateria passado é plausível.
-- CalcCons é uma função para calcular quanta bateria vai ser consumida na missão e se a bateria atual é suficiente.
-- GetData é a função que vai solicitar os dados para o Robô.
-- GiveData é a função que vai entregar os dados para o piloto.
-- Main é a função principal, que servirá como base, interligando e organizando as demais funções do código.
+- Robo é uma classe que recebe os valores de bateria, tempo e consumo e calcula a energia necessaria e restante para verificar se a missão é viavel.
+- Buscar informações é uma função pára solicitar e verificar os valores a serem calculados.
+- Entregar informações é uma função para devolver essas informações
+- A função main é usada para chamar as outras funções e conecta-las
+
 
 ## TO-DO ✅
 
 - [x] Estruturar o programa.
 - [x] Criar a classe Robo.
 - [x] Criar funções específicas.
-- [x] Criar função principal.
+- [x] Criar função principal (main).
 - [x] Testar funcionamento do programa.
+
+## Testes 📋
+
+seguem anexadas imagens de testes via terminal
+
+**1. Testes com valores validos**
+![teste com valores validos](imagens/testes_valores_validos.png)
+
+**2. Testes com valores invalidos**
+![teste com valores invalidos](imagens/testes_valores_invalidos.png)
